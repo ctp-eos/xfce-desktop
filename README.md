@@ -1,59 +1,3 @@
-# CTP-EOS XFCE Desktop
-
-## Overview
-
-CTP-EOS XFCE Desktop is the desktop environment foundation for the CTP-EOS Linux platform.
-
-This repository maintains a customized XFCE desktop stack built from upstream XFCE components, with CTP-EOS branding, configurations, patches, and automation layered separately from the upstream source tree.
-
-The goal is to provide a stable, lightweight, customizable desktop experience while maintaining a clean separation between upstream XFCE development and CTP-EOS-specific modifications.
-
----
-
-# Repository Structure
-
-```
-xfce-desktop/
-│
-├── upstream/
-│   ├── xfdesktop/
-│   ├── xfce4-panel/
-│   ├── xfwm4/
-│   ├── thunar/
-│   ├── xfce4-session/
-│   ├── xfce4-settings/
-│   ├── xfconf/
-│   └── other XFCE components
-│
-├── branding/
-│   ├── wallpapers/
-│   ├── themes/
-│   ├── icons/
-│   ├── backgrounds/
-│   └── CTP-EOS visual assets
-│
-├── config/
-│   ├── xfce4/
-│   ├── gtk/
-│   ├── sessions/
-│   └── default desktop settings
-│
-├── configs/
-│   └── existing CTP-EOS configuration assets
-│
-├── patches/
-│   ├── xfdesktop/
-│   ├── xfwm4/
-│   ├── xfce4-panel/
-│   └── source modifications
-│
-├── scripts/
-│   ├── build scripts
-│   ├── deployment tools
-│   └── automation utilities
-│
-└── .gitignore
-```
 
 ---
 
@@ -65,9 +9,14 @@ CTP-EOS maintains a downstream development model:
 * `branding/` contains CTP-EOS identity and visual design.
 * `config/` contains default user experience settings.
 * `patches/` contains intentional source-level modifications.
+* `plugins/` contains the curated XFCE plugin ecosystem.
+* `packaging/` contains distribution build resources.
 * `scripts/` contains development and build automation.
+* `docs/` contains project architecture and contributor documentation.
 
 Changes should be isolated into the appropriate layer rather than directly modifying upstream source whenever possible.
+
+This approach keeps upstream XFCE components maintainable while allowing CTP-EOS-specific improvements to evolve independently.
 
 ---
 
@@ -92,6 +41,47 @@ This repository currently tracks XFCE desktop components including:
 * xfce4-whiskermenu-plugin
 * Mousepad
 * Ristretto
+
+Additional XFCE components and plugins will be integrated through the appropriate project layers.
+
+---
+
+# XFCE Plugin Strategy
+
+CTP-EOS maintains a curated XFCE plugin ecosystem focused on:
+
+* desktop usability
+* system visibility
+* stability
+* lightweight operation
+* integration with the CTP-EOS workflow
+
+Plugins are maintained separately from the core XFCE source tree.
+
+Planned plugin categories include:
+
+## Desktop Integration
+
+* Application launchers
+* Menu customization
+* Clipboard management
+* Screenshot utilities
+
+## System Monitoring
+
+* CPU monitoring
+* Memory monitoring
+* Network monitoring
+* Hardware sensors
+* Disk activity monitoring
+
+## User Information
+
+* Weather information
+* System status widgets
+* Custom CTP-EOS status utilities
+
+Plugin selections will be managed through manifests to provide reproducible desktop builds.
 
 ---
 
@@ -121,6 +111,23 @@ Future configuration work:
 * power management defaults
 * notification settings
 * file manager defaults
+* user experience presets
+
+---
+
+## Build Pipeline
+
+The CTP-EOS XFCE desktop build process will follow:
+
+1. Import upstream XFCE sources
+2. Apply CTP-EOS patches
+3. Apply branding assets
+4. Apply default configurations
+5. Install selected plugins
+6. Build packages
+7. Integrate into CTP-EOS releases
+
+The goal is a reproducible desktop build process where upstream components and CTP-EOS customizations remain clearly separated.
 
 ---
 
@@ -133,6 +140,7 @@ Future scripts will support:
 * testing environments
 * ISO integration
 * deployment workflows
+* upstream synchronization
 
 ---
 
@@ -144,6 +152,7 @@ Source changes will be maintained through:
 * component-specific directories
 * upstream comparison tracking
 * reproducible changes
+* isolated modifications
 
 ---
 
@@ -153,7 +162,8 @@ Contributions should maintain the separation between:
 
 1. Upstream XFCE source
 2. CTP-EOS customizations
-3. Build and deployment tooling
+3. Plugin selections
+4. Build and deployment tooling
 
 Before submitting changes:
 
@@ -161,6 +171,7 @@ Before submitting changes:
 * keep patches isolated
 * avoid committing generated build files
 * maintain reproducible build processes
+* preserve upstream compatibility
 
 ---
 
