@@ -1,0 +1,338 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfconf.master package.
+# 
+# Translators:
+# Abdualrahman Hasan, 2025
+# كريم أولاد الشلحة <herr.linux88@gmail.com>, 2012
+# محمد الحرقان <malham1@gmail.com>, 2012
+# وجدي أبو سلطان, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfconf\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2026-05-26 01:03+0200\n"
+"PO-Revision-Date: 2013-07-02 20:48+0000\n"
+"Last-Translator: Abdualrahman Hasan, 2025\n"
+"Language-Team: Arabic (http://app.transifex.com/xfce/xfconf/language/ar/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: xfconf/xfconf-cache.c:850 xfconfd/xfconf-backend-perchannel-xml.c:388
+#: xfconfd/xfconf-backend-perchannel-xml.c:473
+#: xfconfd/xfconf-backend-perchannel-xml.c:637
+#: xfconfd/xfconf-backend-perchannel-xml.c:659 xfconf-query/main.c:396
+#, c-format
+msgid "Property \"%s\" does not exist on channel \"%s\""
+msgstr "خصائص \"%s\" لا توجد في القناة \"%s\""
+
+#: xfconf/xfconf-cache.c:1078
+msgid "Failed to make ResetProperty DBus call"
+msgstr "فشل إعادة تعيين الخصائص DBus call"
+
+#: xfconfd/xfconf-backend-perchannel-xml.c:272
+#, c-format
+msgid "Unable to create configuration directory \"%s\""
+msgstr "غير قادرعلى إنشاء مجلد إعداد \"%s\""
+
+#: xfconfd/xfconf-backend-perchannel-xml.c:317 xfconfd/xfconf-daemon.c:164
+#, c-format
+msgid "Permission denied while modifying property \"%s\" on channel \"%s\""
+msgstr "صلاحيات غير كافية لتحرير الخصائص \"%s\" في القناة \"%s\""
+
+#: xfconfd/xfconf-backend-perchannel-xml.c:603
+#, c-format
+msgid "Unable to remove channel \"%s\": %s"
+msgstr "غير قادر على حذف القناة \"%s\": %s"
+
+#: xfconfd/xfconf-backend-perchannel-xml.c:1322
+#, c-format
+msgid "Invalid type for <property>: \"%s\""
+msgstr "نوع غير متوافق <property>: \"%s\""
+
+#: xfconfd/xfconf-backend-perchannel-xml.c:1339
+#: xfconfd/xfconf-backend-perchannel-xml.c:1417
+#, c-format
+msgid "Unable to parse value of type \"%s\" from \"%s\""
+msgstr "غير قادر على تحليل قيمة النوع \"%s\" من \"%s\""
+
+#: xfconfd/xfconf-backend-perchannel-xml.c:1397
+msgid "The type attribute of <value> cannot be an array"
+msgstr "نوع الميزة <value> لا يمكن أن تكون مصفوفة"
+
+#: xfconfd/xfconf-backend-perchannel-xml.c:1406
+#, c-format
+msgid "Invalid type for <value>: \"%s\""
+msgstr "نوع غير سليم <value>: \"%s\""
+
+#: xfconfd/xfconf-backend-perchannel-xml.c:1686
+#: xfconfd/xfconf-backend-perchannel-xml.c:1949
+#, c-format
+msgid "Channel \"%s\" does not exist"
+msgstr "القناة \"%s\" غير موجودة"
+
+#: xfconfd/xfconf-backend-perchannel-xml.c:2020
+#, c-format
+msgid "Unable to write channel \"%s\": %s"
+msgstr "غير قادر على كتابة القناة \"%s\": %s"
+
+#: xfconfd/xfconf-backend-factory.c:74
+#, c-format
+msgid "Unable to find Xfconf backend of type \"%s\""
+msgstr "غير قادر على العثور على خلفية Xfconf لنوع \"%s\""
+
+#: xfconfd/xfconf-backend.c:121
+msgid "Property names must start with a '/' character"
+msgstr "أسماء الخصائص يجب ان تبدء بالرمز '/'"
+
+#: xfconfd/xfconf-backend.c:130
+msgid "The root element ('/') is not a valid property name"
+msgstr "عنصر الجذر ('/') ليس إسم خصائص سليم"
+
+#: xfconfd/xfconf-backend.c:145
+msgid ""
+"Property names can only include the ASCII characters A-Z, a-z, 0-9, '_', "
+"'-', ':', '.', ',', '[', ']', '{', '}', '<' and '>', as well as '/' as a "
+"separator"
+msgstr "يمكن لأسماء الملكية أن تشمل فقط محارف A-Z, a-z, 0-9, '_', '-', ':', '.', ',', '[', ']', '{', '}', '<' ASCII '>', إضافة إلى '/' كفاصل"
+
+#: xfconfd/xfconf-backend.c:154
+msgid "Property names cannot have two or more consecutive '/' characters"
+msgstr "أسماء الخصائص لا يمكن ان تحتوي على رمزين او اكثر متتالية من '/'"
+
+#: xfconfd/xfconf-backend.c:165
+msgid "Property names cannot end with a '/' character"
+msgstr "أسماء الخصائص لا يمكن ان تنتهي بالرمز '/'"
+
+#: xfconfd/xfconf-backend.c:182
+msgid "Channel name cannot be an empty string"
+msgstr "إسم القناة لا يمكن ان يكون فارغ"
+
+#: xfconfd/xfconf-backend.c:197
+msgid ""
+"Channel names can only include the ASCII characters A-Z, a-z, 0-9, '{', '}',"
+" '|', ']', '[', ':', ',', '.', '_', and '-'"
+msgstr "يمكن لأسماء القنوات أن تحتوي فقط على محارف ASCII A-Z, a-z, 0-9, '{', '}', '|', ']', '[', ':', ',', '.', '_', '-'"
+
+#: xfconfd/xfconf-backend.c:430
+msgid ""
+"The property name can only be empty or \"/\" if a recursive reset was "
+"specified"
+msgstr "يمكن لإسم الخصائص أن يكون فارغا أو \"/\" إذا تمت إعادة تعيين متكررة"
+
+#: xfconfd/main.c:148
+msgid "Prints the xfconfd version."
+msgstr "طباعة نسخة xfconfd."
+
+#: xfconfd/main.c:150
+msgid ""
+"Configuration backends to use.  The first backend specified is opened "
+"read/write; the others, read-only."
+msgstr "إعداد الواجهات الخلفية.  الواجهة الخلفية المحددة أولا يتم فتحها قراءة/كتابة؛ غير ذلك, يتم فتحه قراءة-فقط."
+
+#: xfconfd/main.c:154
+msgid "Fork into background after starting; only useful for testing purposes"
+msgstr "تفرع إلى الخلفية بعد البدء; يستعمل لأغراض تجريبية فقط"
+
+#: xfconfd/main.c:174
+msgid "Xfce Configuration Daemon"
+msgstr "إعدادات Xfce الخفية"
+
+#: xfconfd/main.c:179
+msgid "Xfce configuration daemon"
+msgstr "إعدادات Xfce الخفية"
+
+#: xfconfd/main.c:181
+msgid "Report bugs to http://bugs.xfce.org/\n"
+msgstr "أبلغ عن علة في http://bugs.xfce.org/\n"
+
+#: xfconfd/main.c:184
+#, c-format
+msgid "Error parsing options: %s\n"
+msgstr "خطأ أتناء تحليل الخيارات: %s\n"
+
+#: xfconfd/xfconf-daemon.c:216
+#, c-format
+msgid "GType transformation failed \"%s\""
+msgstr "فشل تحويل GType \"%s\""
+
+#: xfconfd/xfconf-daemon.c:484
+msgid "No backends could be started"
+msgstr "لا يمكن بدء الواجهة الخلفية"
+
+#. TRANSLATORS: This refers to: "A property has been set"
+#: xfconf-query/main.c:113
+msgid "set"
+msgstr "تعيين"
+
+#. TRANSLATORS: This refers to: "A property has been reset"
+#: xfconf-query/main.c:128
+msgid "reset"
+msgstr "إعادة تعيين"
+
+#: xfconf-query/main.c:228
+msgid "Possible types:"
+msgstr ""
+
+#: xfconf-query/main.c:237
+msgid "Version information"
+msgstr "معلومات الإصدار"
+
+#: xfconf-query/main.c:240
+msgid "The channel to query/modify"
+msgstr "قناة الإستعلام/التعديل"
+
+#: xfconf-query/main.c:243
+msgid "The property to query/modify"
+msgstr "خصائص الإستعلام/التعديل"
+
+#: xfconf-query/main.c:246
+msgid "The new value to set for the property (multiple uses for an array)"
+msgstr ""
+
+#: xfconf-query/main.c:249
+msgid "List properties (or channels if -c is not specified)"
+msgstr "قائمة الخصائص (أو القنوات إذا كان -c لم يتم تعيينه)"
+
+#: xfconf-query/main.c:252
+msgid ""
+"Print also the value in combination with -l or -m (use twice to print also "
+"the type)"
+msgstr ""
+
+#: xfconf-query/main.c:255
+msgid "Specify the property value type (multiple uses for an array)"
+msgstr ""
+
+#: xfconf-query/main.c:258
+msgid "Reset property"
+msgstr "إعادة تعيين الخصائص"
+
+#: xfconf-query/main.c:261
+msgid "Recursive (use with -r)"
+msgstr "المتكرر (يستعمل بـ -r)"
+
+#: xfconf-query/main.c:264
+msgid "Force array even if only one element"
+msgstr "إجبار المصفوفة حتى لو كان عنصر واحد فقط"
+
+#: xfconf-query/main.c:267
+msgid "Invert an existing boolean property"
+msgstr "عكس خصائص قيمة منطقية موجودة"
+
+#: xfconf-query/main.c:270
+msgid "Monitor a channel for property changes"
+msgstr "قناة لمراقبة تغيرات الخصائص"
+
+#: xfconf-query/main.c:273
+msgid "List types that can be specified using the --type option"
+msgstr ""
+
+#: xfconf-query/main.c:277
+msgid "Create a new property if it does not already exist"
+msgstr "إنشاء إسم الخصائص جديد إن لم يكن موجودا أصلا"
+
+#: xfconf-query/main.c:292
+msgid "- Xfconf commandline utility"
+msgstr "- Xfconf أداة سطر الأوامر"
+
+#: xfconf-query/main.c:296
+#, c-format
+msgid "Option parsing failed: %s"
+msgstr "فشل خيار التحليل: %s"
+
+#: xfconf-query/main.c:307
+msgid "The Xfce development team. All rights reserved."
+msgstr "فريق تطوير الإكسفس. كل الحقوق محفوظة."
+
+#: xfconf-query/main.c:308
+#, c-format
+msgid "Please report bugs to <%s>."
+msgstr "الرجاء الإيلاغ عن علة إلى <%s>."
+
+#: xfconf-query/main.c:321
+msgid "No property specified"
+msgstr "لم يتم تحديد الخصائص"
+
+#: xfconf-query/main.c:326
+msgid "The property name should start with '/'"
+msgstr ""
+
+#: xfconf-query/main.c:331
+msgid "--set and --reset options can not be used together"
+msgstr ""
+
+#: xfconf-query/main.c:336
+msgid "--set and --reset options can not be used together with --list"
+msgstr ""
+
+#: xfconf-query/main.c:345
+#, c-format
+msgid "Failed to init libxfconf: %s"
+msgstr "فشل بدء libxfconf: %s"
+
+#: xfconf-query/main.c:355
+msgid "Channels:"
+msgstr "قنوات:"
+
+#: xfconf-query/main.c:379
+#, c-format
+msgid "Start monitoring channel \"%s\":"
+msgstr "بدء مراقبة القناة \"%s\":"
+
+#: xfconf-query/main.c:408 xfconf-query/main.c:512 xfconf-query/main.c:578
+msgid "Failed to set property"
+msgstr "فشل تعيين الخصائص"
+
+#: xfconf-query/main.c:411
+msgid "--toggle only works with boolean values"
+msgstr "--toggle تعمل فقط مع القيم المنطقية"
+
+#: xfconf-query/main.c:421 xfconf-query/main.c:423 xfconf-query/main.c:441
+#: xfconf-query/main.c:443
+msgid "(unknown)"
+msgstr "(مجهول)"
+
+#: xfconf-query/main.c:431
+#, c-format
+msgid "Value is an array with %d items:"
+msgstr "القيمة هي مصفوفة مع %d عناصر:"
+
+#: xfconf-query/main.c:456
+msgid "When creating a new property, the value type must be specified"
+msgstr "عند إنشاء خصائص جديدة, يجب أن تحدد نوع القيمة"
+
+#: xfconf-query/main.c:466
+msgid "Failed to get the existing type for the value"
+msgstr "فشل الحصول على نوع القيمة الموجودة حاليا"
+
+#: xfconf-query/main.c:485
+msgid "Unable to determine the type of the value"
+msgstr "عاجز عن تحديد نوع القيمة"
+
+#: xfconf-query/main.c:492
+msgid "A value type must be specified to change an array into a single value"
+msgstr "نوع القيمة يجب أن يحدد لتغير مصفوفة إلى قيمة وحيدة"
+
+#: xfconf-query/main.c:504 xfconf-query/main.c:561
+#, c-format
+msgid "Unable to convert \"%s\" to type \"%s\""
+msgstr "غير قادر على تحويل \"%s\" إلى النوع \"%s\""
+
+#: xfconf-query/main.c:532
+#, c-format
+msgid "There are %d new values, but only %d types could be determined"
+msgstr "هنالك %d قيم جديدة, لكن فقط %d قيم يمكن تحديدها"
+
+#: xfconf-query/main.c:552
+#, c-format
+msgid "Unable to determine type of value at index %d"
+msgstr "عاجز عن تحديد نوع القيمة في الأرشيف %d"
+
+#: xfconf-query/main.c:603
+#, c-format
+msgid "Channel \"%s\" contains no properties"
+msgstr "قناة \"%s\" لا تحتوي على خصائص"

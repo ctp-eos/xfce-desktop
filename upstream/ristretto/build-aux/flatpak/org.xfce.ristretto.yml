@@ -1,0 +1,298 @@
+app-id: org.xfce.ristretto
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: ristretto
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
+finish-args:
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  # the open dialog is native, but we still need this to open files via the command line
+  # and drag and drop, and to delete files
+  - --filesystem=host
+  # FIXME: necessary for Tumbler to emit signals, see
+  # https://github.com/flathub/flathub/issues/2770
+  # https://github.com/flathub/org.xfce.ristretto/pull/7
+  - --socket=session-bus
+  - --talk-name=org.freedesktop.FileManager1
+  # access remote locations with GVfs
+  - --filesystem=xdg-run/gvfs
+  # see below, at the end of the pixbuf loader list
+  - --env=GDK_PIXBUF_MODULE_FILE=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+
+cleanup:
+  - '*.a'
+  - '*.la'
+  - /lib/cmake
+  - /lib/girepository-1.0
+  - /lib/pkgconfig
+  - /include
+  - /share/gir-1.0
+  - /share/gtk-doc
+
+modules:
+  # mandatory dependencies
+  - name: libxfce4util
+    cleanup:
+      - /sbin
+    buildsystem: meson
+    config-opts:
+      - --buildtype=minsize
+      - --auto-features=enabled
+      - -Dvala=disabled
+    sources:
+      - type: archive
+        url: https://archive.xfce.org/src/xfce/libxfce4util/4.20/libxfce4util-4.20.1.tar.bz2
+        sha256: 84bfc4daab9e466193540c3665eee42b2cf4d24e3f38fc3e8d1e0a2bebe3b8f1
+        x-checker-data:
+          type: anitya
+          project-id: 232001
+          url-template: https://archive.xfce.org/src/xfce/libxfce4util/$major.$minor/libxfce4util-$version.tar.bz2
+
+  - name: xfconf
+    cleanup:
+      - /bin
+      - /share/bash-completion
+    buildsystem: meson
+    config-opts:
+      - --auto-features=enabled
+      - --buildtype=minsize
+      - -Dvala=disabled
+      - -Dservice-name-prefix=org.xfce.ristretto
+    sources:
+      - type: archive
+        url: https://archive.xfce.org/src/xfce/xfconf/4.21/xfconf-4.21.0.tar.xz
+        sha256: 0c2d749cc9109e5c5f2b92687faa20b7136c38ff5873e3b5d3ee53fe4e7cf1d4
+        x-checker-data:
+          type: anitya
+          project-id: 14854
+          stable-only: false
+          url-template: https://archive.xfce.org/src/xfce/xfconf/$major.$minor/xfconf-$version.tar.bz2
+
+  - name: libxfce4ui
+    cleanup:
+      - /bin
+      - /etc
+      - /share/icons
+      - /share/applications
+    buildsystem: meson
+    config-opts:
+      - --auto-features=enabled
+      - --buildtype=minsize
+      - -Dvala=disabled
+      - -Dstartup-notification=disabled
+      - -Dlibgtop=disabled
+      - -Dglade=disabled
+    sources:
+      - type: archive
+        url: https://archive.xfce.org/src/xfce/libxfce4ui/4.21/libxfce4ui-4.21.0.tar.xz
+        sha256: dd75ff86b6ac814cf71c66004494394eeab962f5360e8e88fa724fa972b9da7b
+      - type: patch
+        path: patches/0001-meson-build-Define-missing-dependencies-when-libgtop.patch
+      - type: patch
+        path: patches/0001-build-Replace-xdt-csource-with-glib-compile-resource.patch
+      - type: patch
+        path: patches/0002-build-Add-xdt-gen-visibility-to-get-rid-of-autotools.patch
+        x-checker-data:
+          type: anitya
+          project-id: 232000
+          stable-only: false
+          url-template: https://archive.xfce.org/src/xfce/libxfce4ui/$major.$minor/libxfce4ui-$version.tar.xz
+
+  # optional dependencies for gdk-pixbuf
+  - name: libopenraw
+    build-options:
+      append-path: /usr/lib/sdk/rust-stable/bin
+    sources:
+      - type: archive
+        url: https://libopenraw.freedesktop.org/download/libopenraw-0.3.7.tar.xz
+        sha256: 0ece41951b2cd91e43f6a8a5c6a894bbc8b5923b4e49a82ebb6d8ce62bded68c
+        x-checker-data:
+          type: anitya
+          project-id: 7980
+          url-template: https://libopenraw.freedesktop.org/download/libopenraw-$version.tar.xz
+      # See https://gitlab.freedesktop.org/libopenraw/libopenraw/-/issues/9
+      # Necessary in this context, to make the pixbuf loader install in /app/lib
+      - type: patch
+        path: patches/build-Honor-installation-prefix-also-for-the-pixbuf-.patch
+      - type: shell
+        commands:
+          - autoreconf -vfi
+    modules:
+      - name: boost
+        cleanup:
+          - '*'
+        buildsystem: simple
+        build-commands:
+          - ./bootstrap.sh --prefix=/app --with-libraries=system --with-libraries=test
+          - ./b2 install variant=release link=shared runtime-link=shared cxxflags="$CXXFLAGS"
+            linkflags="$LDFLAGS" -j $FLATPAK_BUILDER_N_JOBS
+        sources:
+          - type: archive
+            url: https://boostorg.jfrog.io/artifactory/main/release/1.87.0/source/boost_1_87_0.tar.gz
+            sha256: f55c340aa49763b1925ccf02b2e83f35fdcf634c9d5164a2acb87540173c741d
+            x-checker-data:
+              type: anitya
+              project-id: 6845
+              url-template: https://boostorg.jfrog.io/artifactory/main/release/$version/source/boost_${version0}_${version1}_$version2.tar.gz
+
+  - name: libheif
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_COMPILE_WARNING_AS_ERROR=OFF
+      - -DWITH_OpenH264_DECODER=OFF
+      - -DENABLE_PLUGIN_LOADING=OFF
+    sources:
+      - type: archive
+        url: https://github.com/strukturag/libheif/releases/download/v1.19.5/libheif-1.19.5.tar.gz
+        sha256: d3cf0a76076115a070f9bc87cf5259b333a1f05806500045338798486d0afbaf
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/strukturag/libheif/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          url-query: .assets | map(select(.name=="libheif-\($version).tar.gz")) |
+            first | .browser_download_url
+      - type: shell
+        commands:
+          - sed -i 's|DESTINATION ${GDKPIXBUF2_MODULE_DIR}|DESTINATION /app/lib/gdk-pixbuf-2.0/2.10.0/loaders|'
+            gdk-pixbuf/CMakeLists.txt
+    modules:
+      - name: libde265
+        cleanup:
+          - /bin
+        config-opts:
+          - --disable-encoder
+          - --disable-sherlock265
+          - --disable-dec265
+        sources:
+          - type: archive
+            url: https://github.com/strukturag/libde265/releases/download/v1.0.15/libde265-1.0.15.tar.gz
+            sha256: 00251986c29d34d3af7117ed05874950c875dd9292d016be29d3b3762666511d
+            x-checker-data:
+              type: json
+              url: https://api.github.com/repos/strukturag/libde265/releases/latest
+              version-query: .tag_name | sub("^v"; "")
+              url-query: .assets | map(select(.name=="libde265-\($version).tar.gz"))
+                | first | .browser_download_url
+
+  - name: libwmf
+    cleanup:
+      - /bin
+    config-opts:
+      - CFLAGS=-I/app/include/freetype2
+    sources:
+      - type: git
+        url: https://github.com/caolanm/libwmf.git
+        tag: v0.2.13
+        commit: 9e4737f2293c0d127bda92e5b01896df10571424
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/caolanm/libwmf/releases/latest
+          tag-query: .tag_name
+          version-query: $tag | sub("^v"; "")
+          timestamp-query: .published_at
+      - type: shell
+        commands:
+          - autoreconf -vfi
+    modules:
+      - name: freetype
+        buildsystem: meson
+        sources:
+          - type: archive
+            url: https://download-mirror.savannah.gnu.org/releases/freetype/freetype-2.13.3.tar.xz
+            sha256: 0550350666d427c74daeb85d5ac7bb353acba5f76956395995311a9c6f063289
+            x-checker-data:
+              type: anitya
+              project-id: 854
+              url-template: https://download-mirror.savannah.gnu.org/releases/freetype/freetype-$version.tar.xz
+
+  - name: webp-pixbuf-loader
+    buildsystem: meson
+    config-opts:
+      - -Dgdk_pixbuf_moduledir=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders/
+    sources:
+      - type: git
+        url: https://github.com/aruiz/webp-pixbuf-loader.git
+        tag: 0.2.7
+        commit: 52232e4ba282b2fed68e8fcb4b5d45ed0eaa4ed3
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/aruiz/webp-pixbuf-loader/releases/latest
+          tag-query: .tag_name
+          version-query: $tag
+          timestamp-query: .published_at
+
+  - name: libavif
+    buildsystem: cmake
+    config-opts:
+      - -DAVIF_BUILD_GDK_PIXBUF=ON
+      - -DAVIF_LIBYUV=OFF
+    sources:
+      - type: git
+        url: https://github.com/AOMediaCodec/libavif.git
+        tag: v1.1.1
+        commit: bb24db03cd99befe09c87b602e36f24d75a980d1
+        x-checker-data:
+          type: anitya
+          project-id: 178015
+          tag-template: v$version
+      - type: shell
+        commands:
+          - sed -i 's|DESTINATION ${GDK_PIXBUF_MODULEDIR}|DESTINATION /app/lib/gdk-pixbuf-2.0/2.10.0/loaders|'
+            contrib/gdk-pixbuf/CMakeLists.txt
+
+  # for the above libraries to be taken into account by gdk-pixbuf, stolen from
+  # https://github.com/flathub/org.gnome.eog/blob/master/org.gnome.eog.yml
+  - name: update-pixbuf-loaders
+    buildsystem: simple
+    build-commands:
+      - GDK_PIXBUF_MODULEDIR=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders/ gdk-pixbuf-query-loaders
+        > /app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+      - gdk-pixbuf-query-loaders >> /app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+
+  # Tumbler as a private service, just as Xfconf above: stricly speaking it is not a
+  # mandatory dependency, but in the Flatpak context it almost becomes one, and it
+  # allows the application to be more self-contained
+  - name: tumbler
+    cleanup:
+      - /lib/systemd
+      - /share/icons
+    post-install:
+      - sed -i '/^SystemdService=/d' /app/share/dbus-1/services/org.xfce.ristretto.*.service
+    buildsystem: meson
+    config-opts:
+      - --buildtype=minsize
+      - --auto-features=enabled
+      - -Dcover-thumbnailer=disabled
+      - -Dfont-thumbnailer=disabled
+      - -Dffmpeg-thumbnailer=disabled
+      - -Dgst-thumbnailer=disabled
+      - -Dodf-thumbnailer=disabled
+      - -Dpoppler-thumbnailer=disabled
+      - -Dgepub-thumbnailer=disabled
+      - -Dservice-name-prefix=org.xfce.ristretto
+      - -Draw-thumbnailer=disabled
+    sources:
+      - type: archive
+        url: https://archive.xfce.org/src/xfce/tumbler/4.21/tumbler-4.21.0.tar.xz
+        sha256: 794b3da6b0665c59dea97dcfe307de0f7f5207b1ce4490b57b379b2571609b35
+        x-checker-data:
+          type: anitya
+          project-id: 5014
+          stable-only: false
+          url-template: https://archive.xfce.org/src/xfce/tumbler/$major.$minor/tumbler-$version.tar.bz2
+
+  - name: ristretto
+    buildsystem: meson
+    config-opts:
+      - --buildtype=minsize
+      - --auto-features=enabled
+      - -Dservice-name-prefix=org.xfce.ristretto
+    sources:
+      - type: git
+        url: https://gitlab.xfce.org/apps/ristretto.git
+        # to build a local branch, comment out 'url' and uncomment:
+        #path: ../../
+        #branch: your-branch

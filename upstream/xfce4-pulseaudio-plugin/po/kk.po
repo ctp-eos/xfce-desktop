@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-pulseaudio-plugin package.
+# 
+# Translators:
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2016-2018,2020,2022,2024,2026
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:07+0200\n"
+"PO-Revision-Date: 2015-10-05 20:18+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2016-2018,2020,2022,2024,2026\n"
+"Language-Team: Kazakh (http://app.transifex.com/xfce/xfce-panel-plugins/language/kk/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: kk\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: panel-plugin/pulseaudio.desktop.in.in:5
+msgid "PulseAudio Plugin"
+msgstr "PulseAudio плагині"
+
+#: panel-plugin/pulseaudio.desktop.in.in:6
+#: panel-plugin/pulseaudio-plugin.c:274
+msgid "Adjust the audio volume of the PulseAudio sound system"
+msgstr "PulseAudio дыбыс жүйесінің аудио деңгейлерін басқару"
+
+#: panel-plugin/pulseaudio-dialog.glade:51
+msgid "None"
+msgstr "Жоқ"
+
+#: panel-plugin/pulseaudio-dialog.glade:54
+msgid "All"
+msgstr "Барлығы"
+
+#: panel-plugin/pulseaudio-dialog.glade:57
+msgid "Output only"
+msgstr "Тек шығыс"
+
+#: panel-plugin/pulseaudio-dialog.glade:60
+msgid "Input only"
+msgstr "Тек кіріс"
+
+#: panel-plugin/pulseaudio-dialog.glade:66
+msgid "PulseAudio Panel Plugin"
+msgstr "PulseAudio панель плагині"
+
+#: panel-plugin/pulseaudio-dialog.glade:151
+msgid "Enable keyboard _shortcuts for volume control"
+msgstr "Дыбыс деңгейін басқару үшін пернетақта жарлық_тарын іске қосу"
+
+#: panel-plugin/pulseaudio-dialog.glade:155
+msgid ""
+"Enables volume control using multimedia keys. Make sure no other application"
+" that listens to these keys (e.g. xfce4-volumed) is running in the "
+"background."
+msgstr "Мультимедиа пернелер көмегімен дыбысты басқаруды іске қосады. Ол пернелерді тындайтын басқа қолданбалар (мысалы, xfce4-volumed) орындалып тұрмағанына көз жеткізіңіз."
+
+#: panel-plugin/pulseaudio-dialog.glade:168
+msgid "Play system _sound when volume changes"
+msgstr "Дыбыс деңгейі өзгерген кезде жүйелік дыбы_сты ойнату"
+
+#: panel-plugin/pulseaudio-dialog.glade:172
+msgid ""
+"Enables audio feedback when using multimedia keys to change the volume."
+msgstr "Мультимедиялық пернелер арқылы дыбыс деңгейін өзгерту кезінде аудио кері байланысын іске қосады."
+
+#: panel-plugin/pulseaudio-dialog.glade:185
+msgid "Always display the recording _indicator"
+msgstr "Жазба _индикаторын әрқашан көрсету"
+
+#: panel-plugin/pulseaudio-dialog.glade:208
+msgid "Show volume _notifications:"
+msgstr "Дыбыс деңгейі ха_барламаларын көрсету:"
+
+#: panel-plugin/pulseaudio-dialog.glade:222
+msgid "Mute/unmute is notified in all modes except \"None\""
+msgstr "Дыбысты басу/іске қосу \"Ешнәрсе\" режимінен бөлек басқа режимдерде хабарланады"
+
+#: panel-plugin/pulseaudio-dialog.glade:248
+msgid "Step size used when adjusting volume with mouse wheel or hotkeys."
+msgstr "Дыбыс деңгейін тышқан дөңгелегі немесе ыстық пернелермен келтіру кезінде қолданылатын қадамы."
+
+#: panel-plugin/pulseaudio-dialog.glade:254
+msgid "_Volume step:"
+msgstr "_Дыбыс деңгейінің қадамы:"
+
+#: panel-plugin/pulseaudio-dialog.glade:300
+msgid "M_aximum volume:"
+msgstr "М_аксималды дыбыс деңгейі:"
+
+#: panel-plugin/pulseaudio-dialog.glade:345
+msgid "Behaviour"
+msgstr "Мінез-құлығы"
+
+#: panel-plugin/pulseaudio-dialog.glade:380
+msgid "Audio _Mixer"
+msgstr "Аудио _миксері"
+
+#: panel-plugin/pulseaudio-dialog.glade:392
+msgid ""
+"Audio mixer command that can be executed from the context menu, e.g. "
+"\"pavucontrol\", \"unity-control-center sound\"."
+msgstr "Контекст мәзірінен жөнелтуге болатын аудио миксерді жөнелту командасы, мыс. \"pavucontrol\", \"unity-control-center sound\"."
+
+#: panel-plugin/pulseaudio-dialog.glade:405
+msgid "_Run Audio Mixer..."
+msgstr "Аудио миксерін жө_нелту..."
+
+#: panel-plugin/pulseaudio-dialog.glade:427
+msgid "Sound Settings"
+msgstr "Дыбыс баптаулары"
+
+#: panel-plugin/pulseaudio-dialog.glade:446
+msgid "General"
+msgstr "Жалпы"
+
+#: panel-plugin/pulseaudio-dialog.glade:478
+msgid "Control Playback of Media Players"
+msgstr "Медиа плеерлер ойнатуын басқару"
+
+#: panel-plugin/pulseaudio-dialog.glade:521
+msgid "Enable multimedia keys for playback control"
+msgstr "Ойнатуды басқару үшін мультимедиа пернелерін іске қосу"
+
+#: panel-plugin/pulseaudio-dialog.glade:536
+msgid "Send multimedia keys to all players"
+msgstr "Мультимедия пернелерін барлық плеерлерге жіберу"
+
+#: panel-plugin/pulseaudio-dialog.glade:551
+msgid "Enable experimental window focus support"
+msgstr "Сынамалы түрде терезелер фокусына қолдауды іске қосу"
+
+#: panel-plugin/pulseaudio-dialog.glade:629
+msgid "Name"
+msgstr "Аты"
+
+#: panel-plugin/pulseaudio-dialog.glade:641
+msgid "Persistent"
+msgstr "Тұрақты"
+
+#: panel-plugin/pulseaudio-dialog.glade:652
+msgid "Ignored"
+msgstr "Еленбейтін"
+
+#: panel-plugin/pulseaudio-dialog.glade:672
+msgid "Clear Known Items"
+msgstr "Белгілі нәрселерді тазарту"
+
+#: panel-plugin/pulseaudio-dialog.glade:694
+msgid "Please restart the players to make them visible again."
+msgstr "Плеерлерді қайта көрінетіндей ету үшін, оларды қайта іске қосыңыз."
+
+#: panel-plugin/pulseaudio-dialog.glade:717
+msgid "Known Media Players"
+msgstr "Белгілі медиа плеерлер"
+
+#: panel-plugin/pulseaudio-dialog.glade:739
+msgid "Media Players"
+msgstr "Медиа плеерлер"
+
+#: panel-plugin/pulseaudio-dialog.c:136 panel-plugin/pulseaudio-menu.c:271
+#, c-format
+msgid ""
+"<big><b>Failed to execute command \"%s\".</b></big>\n"
+"\n"
+"%s"
+msgstr "<big><b>\"%s\" командасын жөнелту қатесі.</b></big>\n\n%s"
+
+#: panel-plugin/pulseaudio-dialog.c:139 panel-plugin/pulseaudio-menu.c:274
+msgid "Error"
+msgstr "Қате"
+
+#: panel-plugin/pulseaudio-button.c:348 panel-plugin/pulseaudio-notify.c:184
+msgid "Not connected to the PulseAudio server"
+msgstr "PulseAudio серверіне байланыспаған"
+
+#: panel-plugin/pulseaudio-button.c:366
+#, c-format
+msgid ""
+"<b>Volume %d%% (muted)</b>\n"
+"<small>%s</small>"
+msgstr "<b>Дыбыс %d%% (басылған)</b>\n<small>%s</small>"
+
+#: panel-plugin/pulseaudio-button.c:368
+#, c-format
+msgid ""
+"<b>Volume %d%%</b>\n"
+"<small>%s</small>"
+msgstr "<b>Дыбыс %d%%</b>\n<small>%s</small>"
+
+#: panel-plugin/pulseaudio-menu.c:479
+msgid "Port"
+msgstr "Порт"
+
+#: panel-plugin/pulseaudio-menu.c:580
+msgid "Output"
+msgstr "Шығыс"
+
+#: panel-plugin/pulseaudio-menu.c:624
+msgid "Input"
+msgstr "Кіріс"
+
+#: panel-plugin/pulseaudio-menu.c:726
+msgid "Choose Playlist"
+msgstr "Ойнату тізімін таңдау"
+
+#. Audio mixers
+#: panel-plugin/pulseaudio-menu.c:761
+msgid "_Audio mixer..."
+msgstr "_Аудио миксері..."
+
+#: panel-plugin/pulseaudio-notify.c:186
+#, c-format
+msgid "Volume %d%c (muted)"
+msgstr "Дыбыс деңгейі %d%c (басылған)"
+
+#: panel-plugin/pulseaudio-notify.c:188
+#, c-format
+msgid "Volume %d%c"
+msgstr "Дыбыс деңгейі %d%c"
+
+#: panel-plugin/mprismenuitem.c:378 panel-plugin/mprismenuitem.c:451
+#: panel-plugin/mprismenuitem.c:806
+msgid "Not currently playing"
+msgstr "Ағымдағы уақытта ойнатып тұрған жоқ"

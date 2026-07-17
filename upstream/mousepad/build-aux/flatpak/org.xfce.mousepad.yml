@@ -1,0 +1,148 @@
+app-id: org.xfce.mousepad
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: mousepad
+
+finish-args:
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  # using GtkFileChooserNative would imply non-trivial changes and a loss of functionality
+  - --filesystem=host
+  # access remote locations with GVfs
+  - --filesystem=xdg-run/gvfs
+
+cleanup:
+  - '*.a'
+  - '*.la'
+  - /lib/girepository-1.0
+  - /lib/pkgconfig
+  - /include
+  - /share/gir-1.0
+  - /share/gtk-doc
+  - /share/man
+
+modules:
+  # mandatory dependencies
+  - name: gtksourceview
+    cleanup:
+      - /bin
+    buildsystem: meson
+    config-opts:
+      - -Dvapi=false
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-4.8.4.tar.xz
+        sha256: 7ec9d18fb283d1f84a3a3eff3b7a72b09a10c9c006597b3fbabbb5958420a87d
+        x-checker-data:
+          type: gnome
+          name: gtksourceview
+          versions:
+            <: 4.99.0
+
+  # optionnal dependencies (plugins)
+  - name: gspell
+    modules:
+      - name: enchant
+        cleanup:
+          - /bin
+        sources:
+          - type: archive
+            url: https://github.com/rrthomas/enchant/releases/download/v2.8.2/enchant-2.8.2.tar.gz
+            sha256: 8f19535adb5577b83b00e02f330fe9b9eb40dd21f19e2899636fc4d3a7696375
+            x-checker-data:
+              type: anitya
+              project-id: 6601
+              url-template: https://github.com/AbiWord/enchant/releases/download/v$version/enchant-$version.tar.gz
+    cleanup:
+      - /bin
+    buildsystem: meson
+    config-opts:
+      - -Dvapi=false
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/gspell/1.14/gspell-1.14.0.tar.xz
+        sha256: 64ea1d8e9edc1c25b45a920e80daf67559d1866ffcd7f8432fecfea6d0fe8897
+        x-checker-data:
+          type: gnome
+          name: gspell
+
+  - name: libxfce4ui
+    modules:
+      - name: libxfce4util
+        cleanup:
+          - /sbin
+        buildsystem: meson
+        config-opts:
+          - --buildtype=minsize
+          - --auto-features=enabled
+          - -Dvala=disabled
+        sources:
+          - type: archive
+            url: https://archive.xfce.org/src/xfce/libxfce4util/4.20/libxfce4util-4.20.1.tar.bz2
+            sha256: 84bfc4daab9e466193540c3665eee42b2cf4d24e3f38fc3e8d1e0a2bebe3b8f1
+            x-checker-data:
+              type: anitya
+              project-id: 232001
+              url-template: https://archive.xfce.org/src/xfce/libxfce4util/$major.$minor/libxfce4util-$version.tar.bz2
+      - name: xfconf
+        cleanup:
+          - /bin
+          - /share/bash-completion
+        buildsystem: meson
+        config-opts:
+          - --auto-features=enabled
+          - --buildtype=minsize
+          - -Dvala=disabled
+          - -Dservice-name-prefix=org.xfce.mousepad
+        sources:
+          - type: archive
+            url: https://archive.xfce.org/src/xfce/xfconf/4.21/xfconf-4.21.0.tar.xz
+            sha256: 0c2d749cc9109e5c5f2b92687faa20b7136c38ff5873e3b5d3ee53fe4e7cf1d4
+            x-checker-data:
+              type: anitya
+              stable-only: false
+              project-id: 14854
+              url-template: https://archive.xfce.org/src/xfce/xfconf/$major.$minor/xfconf-$version.tar.bz2
+    cleanup:
+      - /bin
+      - /etc
+      - /share/icons
+      - /share/applications
+    buildsystem: meson
+    config-opts:
+      - --auto-features=enabled
+      - --buildtype=minsize
+      - -Dvala=disabled
+      - -Dstartup-notification=disabled
+      - -Dlibgtop=disabled
+      - -Dglade=disabled
+    sources:
+      - type: archive
+        url: https://archive.xfce.org/src/xfce/libxfce4ui/4.21/libxfce4ui-4.21.0.tar.xz
+        sha256: dd75ff86b6ac814cf71c66004494394eeab962f5360e8e88fa724fa972b9da7b
+      - type: patch
+        path: patches/0001-meson-build-Define-missing-dependencies-when-libgtop.patch
+      - type: patch
+        path: patches/0001-build-Replace-xdt-csource-with-glib-compile-resource.patch
+      - type: patch
+        path: patches/0002-build-Add-xdt-gen-visibility-to-get-rid-of-autotools.patch
+        x-checker-data:
+          type: anitya
+          project-id: 232000
+          stable-only: false
+          url-template: https://archive.xfce.org/src/xfce/libxfce4ui/$major.$minor/libxfce4ui-$version.tar.xz
+
+  - name: mousepad
+    buildsystem: meson
+    config-opts:
+      - --buildtype=minsize
+      - --auto-features=enabled
+      - -Dpolkit=disabled
+    sources:
+      - type: git
+        url: https://gitlab.xfce.org/apps/mousepad.git
+        # to build a local branch, comment out 'url' and uncomment:
+        #path: ../../
+        #branch: your-branch

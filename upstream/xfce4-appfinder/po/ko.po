@@ -1,0 +1,482 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce4-appfinder.master package.
+# 
+# Translators:
+# Allen Choi <byunghyun.choi@gmail.com>, 2005
+# Allen Choi <byunghyun.choi@gmail.com>, 2005
+# 1763f4a4329a2376c933c5e919a36cbc_341ca53 <1f851310383599d03339229d772e1290_119292>, 2017-2018
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2011-2015,2018-2020,2022-2023,2025
+# Thomas Sungjin Kang <potopro@gmail.com>, 2013
+# Thomas Sungjin Kang <potopro@gmail.com>, 2013
+# Thomas Sungjin Kang <potopro@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce4-appfinder\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2026-03-04 00:54+0100\n"
+"PO-Revision-Date: 2013-07-02 20:40+0000\n"
+"Last-Translator: Thomas Sungjin Kang <potopro@gmail.com>, 2013\n"
+"Language-Team: Korean (http://app.transifex.com/xfce/xfce4-appfinder/language/ko/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. close all windows and quit
+#: src/appfinder-gdbus.c:95
+msgid "Forced to quit"
+msgstr "강제로 끝내기"
+
+#: src/appfinder-actions.c:158
+msgid "Open URI"
+msgstr "URI 열기"
+
+#: src/appfinder-actions.c:164
+msgid "Terminal command"
+msgstr "터미널 명령"
+
+#: src/appfinder-actions.c:170
+msgid "Wikipedia search"
+msgstr "위키백과 검색"
+
+#: src/appfinder-actions.c:176
+msgid "Man page"
+msgstr "Man 페이지"
+
+#: src/appfinder-actions.c:182
+msgid "Open in file manager"
+msgstr "파일 관리자에서 열기"
+
+#: src/appfinder-category-model.c:153
+msgid "All Applications"
+msgstr "모든 프로그램"
+
+#: src/appfinder-model.c:704 src/appfinder-preferences.glade:647
+msgid "Name"
+msgstr "이름"
+
+#: src/appfinder-model.c:705
+msgid "Comment"
+msgstr "설명"
+
+#: src/appfinder-model.c:706
+msgid "Command"
+msgstr "명령"
+
+#: src/appfinder-model.c:707
+msgid "Categories"
+msgstr "분류"
+
+#: src/appfinder-model.c:708
+msgid "Filename"
+msgstr "파일 이름"
+
+#: src/appfinder-model.c:2693
+msgid "Application or action has no command"
+msgstr "애플리케이션 또는 동작에 명령이 없음"
+
+#: src/appfinder-model.c:3210
+msgid "Commands History"
+msgstr "명령 기록"
+
+#: src/appfinder-model.c:3234
+msgid "Favorites"
+msgstr "즐겨찾기"
+
+#: src/appfinder-preferences.c:315 src/appfinder-preferences.c:336
+msgid "C_lear"
+msgstr "지우기(_L)"
+
+#: src/appfinder-preferences.c:316
+msgid "This will permanently clear the custom command history."
+msgstr "사용자 정의 명령 기록을 완전히 지웁니다."
+
+#: src/appfinder-preferences.c:317
+msgid "Are you sure you want to clear the command history?"
+msgstr "명령 기록을 정말로 지우시렵니까?"
+
+#: src/appfinder-preferences.c:337
+msgid "This will permanently clear the recent items history."
+msgstr "최근 항목 기록을 영구적으로 지웁니다."
+
+#: src/appfinder-preferences.c:338
+msgid "Are you sure you want to clear the recent items history?"
+msgstr "최근 항목 기록을 지우시겠습니까?"
+
+#: src/appfinder-preferences.c:450
+msgid "_Delete"
+msgstr "삭제(_D)"
+
+#: src/appfinder-preferences.c:451
+msgid "The custom action will be deleted permanently."
+msgstr "사용자 정의 동작을 완전히 지웁니다."
+
+#: src/appfinder-preferences.c:452
+#, c-format
+msgid "Are you sure you want to delete action \"%s\"?"
+msgstr "\"%s\" 동작을 삭제하시겠습니까?"
+
+#: src/appfinder-window.c:247 src/appfinder-preferences.glade:81
+#: data/xfce4-appfinder.desktop.in:10
+#: data/org.xfce.xfce4-appfinder.appdata.xml.in:8
+msgid "Application Finder"
+msgstr "프로그램 탐색기"
+
+#: src/appfinder-window.c:300
+msgid "Toggle view mode"
+msgstr "보기 상태 전환"
+
+#: src/appfinder-window.c:381
+msgid "_Preferences"
+msgstr "환경 설정(_P)"
+
+#: src/appfinder-window.c:392 src/appfinder-window.c:1287
+msgid "La_unch"
+msgstr "실행(_U)"
+
+#: src/appfinder-window.c:1025
+msgid "Failed to launch desktop item editor"
+msgstr "데스크톱 항목 편집기 실행 실패"
+
+#: src/appfinder-window.c:1050
+msgid "Confirm"
+msgstr "확인"
+
+#: src/appfinder-window.c:1051
+msgid ""
+"This will permanently remove the custom desktop file from your home "
+"directory."
+msgstr "홈 디렉터리에서 사용자 정의 desktop 파일을 완전히 지웁니다."
+
+#: src/appfinder-window.c:1052
+#, c-format
+msgid "Are you sure you want to revert \"%s\"?"
+msgstr "\"%s\"을(를) 정말로 복원하시렵니까?"
+
+#: src/appfinder-window.c:1062
+msgid "Failed to remove desktop file"
+msgstr "데스크톱 파일 제거 실패"
+
+#. I18N: the first %s will be replace with users' applications directory, the
+#. * second with Hidden=true
+#: src/appfinder-window.c:1095
+#, c-format
+msgid ""
+"To unhide the item you have to manually remove the desktop file from \"%s\" "
+"or open the file in the same directory and remove the line \"%s\"."
+msgstr "항목 숨기기를 해제하려면, \"%s\"에서 데스크톱의 파일을 직접 제거하거나, 같은 디렉터리에서 파일을 열고 \"%s\" 줄을 제거하십시오."
+
+#: src/appfinder-window.c:1100 src/appfinder-window.c:1333
+msgid "_Hide"
+msgstr "숨기기(_H)"
+
+#: src/appfinder-window.c:1101
+#, c-format
+msgid "Are you sure you want to hide \"%s\"?"
+msgstr "\"%s\"을(를) 정말로 숨기시렵니까?"
+
+#: src/appfinder-window.c:1269
+msgid "Remove From Favorites"
+msgstr "즐겨찾기에서 제거"
+
+#: src/appfinder-window.c:1269
+msgid "Add to Favorites"
+msgstr "즐겨찾기에 추가"
+
+#: src/appfinder-window.c:1301
+msgid "_Edit"
+msgstr "수정(_E)"
+
+#: src/appfinder-window.c:1318
+msgid "_Revert"
+msgstr "되돌리기(_R)"
+
+#: src/main.c:65
+msgid "Start in collapsed mode"
+msgstr "축소 모드로 시작하기"
+
+#: src/main.c:66
+msgid "Print version information and exit"
+msgstr "버전 정보를 출력하고 끝냅니다"
+
+#: src/main.c:67
+msgid "Replace the existing service"
+msgstr "존재하는 서비스 바꾸기"
+
+#: src/main.c:68
+msgid "Quit all instances"
+msgstr "모든 인스턴스 끝내기"
+
+#: src/main.c:69
+msgid "Do not try to use or become a D-Bus service"
+msgstr "D-Bus 서비스를 사용하거나 D-Bus와 동작하도록 시도하지 않음"
+
+#: src/main.c:70
+msgid "Toggle window visibility of background service"
+msgstr "백그라운드 서비스 창 표시 여부 전환"
+
+#: src/main.c:71
+msgid "Run in daemon mode"
+msgstr "데몬 모드로 실행"
+
+#: src/main.c:243
+#, c-format
+msgid "Type \"%s --help\" for usage."
+msgstr "사용 정보를 보려면 \"%s --help\"를 입력하십시오."
+
+#: src/main.c:254
+msgid "The Xfce development team. All rights reserved."
+msgstr "Xfce 개발 팀. All rights reserved."
+
+#: src/main.c:255
+#, c-format
+msgid "Please report bugs to <%s>."
+msgstr "<%s>에게 버그를 알려주십시오."
+
+#: src/appfinder-preferences.glade:13
+msgid "Prefix"
+msgstr "접두어"
+
+#: src/appfinder-preferences.glade:16
+msgid "Regular Expression"
+msgstr "정규 표현식"
+
+#: src/appfinder-preferences.glade:37
+msgid "Very Small"
+msgstr "가장 작게"
+
+#: src/appfinder-preferences.glade:40
+msgid "Smaller"
+msgstr "더 작게"
+
+#: src/appfinder-preferences.glade:43
+msgid "Small"
+msgstr "작게"
+
+#: src/appfinder-preferences.glade:46
+msgid "Normal"
+msgstr "보통"
+
+#: src/appfinder-preferences.glade:49
+msgid "Large"
+msgstr "크게"
+
+#: src/appfinder-preferences.glade:52
+msgid "Larger"
+msgstr "더 크게"
+
+#: src/appfinder-preferences.glade:55
+msgid "Very Large"
+msgstr "가장 크게"
+
+#: src/appfinder-preferences.glade:98
+msgid "_Close"
+msgstr "닫기(_C)"
+
+#: src/appfinder-preferences.glade:114
+msgid "_Help"
+msgstr "도움말(_H)"
+
+#: src/appfinder-preferences.glade:167
+msgid "Remember last _selected category"
+msgstr "최근 선택한 카테고리 기억(_S)"
+
+#: src/appfinder-preferences.glade:183
+msgid "Always c_enter the window"
+msgstr "항상 창을 가운데로 하기(_E)"
+
+#: src/appfinder-preferences.glade:188
+msgid "Center the window on startup."
+msgstr "시작시 창을 가운데로 합니다."
+
+#: src/appfinder-preferences.glade:201
+msgid "Close window when _focus is lost"
+msgstr "포커스를 잃으면 창 닫기(_F)"
+
+#: src/appfinder-preferences.glade:206
+msgid "When the focus is lost to another window, appfinder should be closed."
+msgstr "다른 창으로 포커스가 이동하면 애플리케이션 탐색기를 닫습니다."
+
+#: src/appfinder-preferences.glade:219
+msgid "Keep running _instance in the background"
+msgstr "백그라운드에서 인스탄스 유지 실행(_I)"
+
+#: src/appfinder-preferences.glade:224
+msgid ""
+"Instead of quitting the application when the last window is closed, keep a "
+"running instance to speed up opening new windows. You might want to disable "
+"this to reduce memory usage."
+msgstr "프로그램을 빠져나가는 대신 마지막 창이 닫혔을 경우 새 창을 여는 속도를 올리려고 인스턴스 실행을 유지합니다. 메모리 사용을 줄이려면 이것을 비활성화 해보십시오."
+
+#: src/appfinder-preferences.glade:237
+msgid "Single window"
+msgstr "단일 창"
+
+#: src/appfinder-preferences.glade:242
+msgid ""
+"When an instance is running in the background, only open one window at a "
+"time."
+msgstr "인스턴스가 배경으로 실행 중일 땐, 한 번에 한 개의 창만 엽니다."
+
+#: src/appfinder-preferences.glade:255
+msgid "Sort recently used items first"
+msgstr "최근 사용 항목 먼저 정렬"
+
+#: src/appfinder-preferences.glade:260
+msgid ""
+"Order items, such that items that are most recently used are always on the "
+"top."
+msgstr "가장 최근에 사용한 항목이 항상 위에 오도록 정렬합니다."
+
+#: src/appfinder-preferences.glade:272
+msgid "Single-click selects and launches items"
+msgstr "한 번 클릭으로 항목 선택 및 실행"
+
+#: src/appfinder-preferences.glade:277
+msgid "Items are selected and launched with only a single-click."
+msgstr "항목을 한 번만 클릭해 선택하고 실행합니다."
+
+#: src/appfinder-preferences.glade:295
+msgid "Behaviour"
+msgstr "동작"
+
+#: src/appfinder-preferences.glade:330
+msgid "_View items as icons"
+msgstr "아이콘과 같은 항목 보기(_V)"
+
+#: src/appfinder-preferences.glade:345
+msgid "Text besi_de icons"
+msgstr "아이콘 옆에 텍스트 표시(_D)"
+
+#: src/appfinder-preferences.glade:363
+msgid "Ite_m icon size:"
+msgstr "항목 아이콘 크기(_M):"
+
+#: src/appfinder-preferences.glade:377
+msgid "Hide category pane"
+msgstr "카테고리 창 숨기기"
+
+#: src/appfinder-preferences.glade:382
+msgid "Hide category panel and show all applications."
+msgstr "카테고리 패널을 숨기고 모든 애플리케이션을 보입니다."
+
+#: src/appfinder-preferences.glade:399
+msgid "Categ_ory icon size:"
+msgstr "분류 아이콘 크기(_O):"
+
+#: src/appfinder-preferences.glade:453
+msgid "Hide window decorations"
+msgstr "창 장식 숨김"
+
+#: src/appfinder-preferences.glade:458
+msgid "Hide window decorations such as title bar and borders."
+msgstr "제목 표시줄과 테두리 같은 창 장식을 숨깁니다."
+
+#: src/appfinder-preferences.glade:473
+msgid "Show generic application _names"
+msgstr "일반 애플리케이션 이름 표시(_N)"
+
+#: src/appfinder-preferences.glade:497
+msgid "Appearance"
+msgstr "모양새"
+
+#: src/appfinder-preferences.glade:527
+msgid "C_lear Custom Command History"
+msgstr "사용자 정의 명령 기록 지우기(_L)"
+
+#: src/appfinder-preferences.glade:539
+msgid "Clear _Recently Used Items History"
+msgstr "최근 사용 항목 기록 지우기(_R)"
+
+#: src/appfinder-preferences.glade:555
+msgid "History"
+msgstr "기록"
+
+#: src/appfinder-preferences.glade:574
+msgid "_General"
+msgstr "일반(_G)"
+
+#: src/appfinder-preferences.glade:598
+msgid "Custom actions are only available in collapsed mode."
+msgstr "사용자 정의 동작은 축소 모드에서만 사용할 수 있습니다."
+
+#: src/appfinder-preferences.glade:659
+msgid "Pattern"
+msgstr "패턴"
+
+#: src/appfinder-preferences.glade:695
+msgid "Add a new custom action."
+msgstr "새 사용자 정의 동작을 추가합니다."
+
+#: src/appfinder-preferences.glade:716
+msgid "Remove the currently selected action."
+msgstr "현재 선택한 동작을 제거합니다."
+
+#: src/appfinder-preferences.glade:774
+#, c-format
+msgid ""
+"If the type is set to prefix, %s will be replaced with the string after the "
+"pattern, %S with the complete entry text. For regular expressions you can "
+"use \\0 and \\<num>."
+msgstr "접두어로 유형을 지정하였다면, %s은(는) 완전한 목록 텍스트로 된 다음 패턴 %S(으)로 바뀝니다. 정규 표현식에 \\0과 \\<숫자>를 사용할 수 있습니다."
+
+#: src/appfinder-preferences.glade:805
+msgid "_Name:"
+msgstr "이름(_N):"
+
+#: src/appfinder-preferences.glade:818
+msgid "Co_mmand:"
+msgstr "명령(_M):"
+
+#: src/appfinder-preferences.glade:833
+msgid "Patte_rn:"
+msgstr "패턴(_R):"
+
+#: src/appfinder-preferences.glade:848
+msgid "_Type:"
+msgstr "유형(_T):"
+
+#: src/appfinder-preferences.glade:860
+msgid "_Save match in command history"
+msgstr "명령 기록내 일치 항목 저장(_S)"
+
+#: src/appfinder-preferences.glade:914
+msgid "Custom _Actions"
+msgstr "사용자 정의 동작(_A)"
+
+#: data/xfce4-appfinder.desktop.in:11
+msgid "Find and launch applications installed on your system"
+msgstr "시스템에 설치된 애플리케이션 찾기 및 실행"
+
+#: data/xfce4-appfinder.desktop.in:12
+msgid "program;applications;bookmarks;"
+msgstr "program;applications;bookmarks;프로그램;애플리케이션;앱;북마크;즐겨찾기;"
+
+#: data/xfce4-run.desktop.in:11
+msgid "Run Program..."
+msgstr "프로그램 실행..."
+
+#: data/xfce4-run.desktop.in:12
+msgid "Enter a command you want to launch"
+msgstr "실행할 명령 입력"
+
+#: data/xfce4-run.desktop.in:13
+msgid ""
+"run;command;application;program;finder;search;launcher;everything;spotlight;sherlock;applesearch;unity"
+" dash;krunner;synapse;ulauncher;launchy;gnome "
+"do;pie;apwal;recoll;alfred;quicksilver;tracker;beagle;kupfer;"
+msgstr "run;command;application;program;finder;search;launcher;everything;spotlight;sherlock;applesearch;unity dash;krunner;synapse;ulauncher;launchy;gnome do;pie;apwal;recoll;alfred;quicksilver;tracker;beagle;kupfer;실행;명령;애플리케이션;앱;프로그램;탐색기;파인더;검색;런처;실행기;에브리씽;스포트라이트;셜록;애플서치;유니티 대시;크러너;시냅스;유런처;런치;그놈 두;파이;알프레드;퀵실버;트래커;비글;"
+
+#: data/org.xfce.xfce4-appfinder.appdata.xml.in:9
+msgid "Application to quickly run applications and commands"
+msgstr "애플리케이션과 명령을 빠르게 실행하는 도구"
+
+#: data/org.xfce.xfce4-appfinder.appdata.xml.in:13
+msgid ""
+"The application finder is a tool to find and launch installed applications "
+"on your system and quickly execute commands. It can also be used to quickly "
+"add launchers to the Xfce Panel by dragging an item from the view and drop "
+"it on the panel."
+msgstr "프로그램 검색기는 시스템에 설치한 프로그램을 찾아 실행시키며, 명령을 빠르게 실행 처리하는 도구입니다. 또한 바로 가기 아이콘을 보기 창에서 Xfce 패널로 끌어다 놓는 방식으로 간편하게 추가할 수 있습니다."

@@ -1,0 +1,2 @@
+# pager_plugin_get_master_plugin() can only return NULL in init() for the first plugin
+pager.c:[0-9]+:[0-9]+: warning: dereference of NULL .+master_plugin.+ \[CWE-476\] \[-Wanalyzer-null-dereference\]

@@ -1,0 +1,8 @@
+# even with 'g_return_val_if_fail (outputs->len > 0, NULL)' above it complains about this, not sure why…
+dialogs/display-settings/display-settings-wayland.c:[0-9]+:[0-9]+: warning: stack-based buffer overflow \[CWE-121\] \[-Wanalyzer-out-of-bounds\]
+dialogs/display-settings/display-settings-wayland.c:[0-9]+:[0-9]+: warning: stack-based buffer overflow \[CWE-121\] \[-Wanalyzer-out-of-bounds\]
+dialogs/display-settings/display-settings-wayland.c:[0-9]+:[0-9]+: warning: stack-based buffer overflow \[CWE-121\] \[-Wanalyzer-out-of-bounds\]
+dialogs/display-settings/display-settings-wayland.c:[0-9]+:[0-9]+: warning: stack-based buffer over-read \[CWE-121\] \[-Wanalyzer-out-of-bounds\]
+dialogs/display-settings/display-settings-wayland.c:[0-9]+:[0-9]+: warning: stack-based buffer over-read \[CWE-121\] \[-Wanalyzer-out-of-bounds\]
+dialogs/display-settings/display-settings-wayland.c:[0-9]+:[0-9]+: warning: stack-based buffer over-read \[CWE-121\] \[-Wanalyzer-out-of-bounds\]
+dialogs/display-settings/display-settings-wayland.c:[0-9]+:[0-9]+: warning: stack-based buffer over-read \[CWE-121\] \[-Wanalyzer-out-of-bounds\]

@@ -1,0 +1,43 @@
+/*
+ * Copyright (C) 2012 Nick Schermer <nick@xfce.org>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+#ifndef __XFCE_MIME_WINDOW_H__
+#define __XFCE_MIME_WINDOW_H__
+
+#include <gtk/gtk.h>
+#include <libxfce4ui/libxfce4ui.h>
+
+G_BEGIN_DECLS
+
+#define XFCE_TYPE_MIME_WINDOW (xfce_mime_window_get_type ())
+#define COMMAND_TYPE_DIALOG (command_dialog_get_type ())
+G_DECLARE_FINAL_TYPE (XfceMimeWindow, xfce_mime_window, XFCE, MIME_WINDOW, XfceTitledDialog)
+
+XfceMimeWindow *
+xfce_mime_window_new (void) G_GNUC_MALLOC;
+GtkWidget *
+xfce_mime_window_create_dialog (XfceMimeWindow *settings);
+#ifdef ENABLE_X11
+GtkWidget *
+xfce_mime_window_create_plug (XfceMimeWindow *settings,
+                              gint socket_id);
+#endif
+
+G_END_DECLS
+
+#endif /* !__XFCE_MIME_WINDOW_H__ */

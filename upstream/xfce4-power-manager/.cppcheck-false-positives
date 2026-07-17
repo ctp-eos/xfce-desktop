@@ -1,0 +1,14 @@
+unreadVariable:src/xfpm-power.c:875
+unreadVariable:common/xfpm-common.c:346
+unreadVariable:common/xfpm-common.c:347
+unreadVariable:common/xfpm-brightness-polkit.c:120
+unreadVariable:common/xfpm-brightness-polkit.c:122
+knownConditionTrueFalse:src/xfpm-polkit.c:271
+knownConditionTrueFalse:settings/xfpm-settings.c:285
+knownConditionTrueFalse:settings/xfpm-settings.c:324
+knownConditionTrueFalse:common/xfpm-brightness.c:89
+knownConditionTrueFalse:common/xfpm-brightness.c:100
+mismatchAllocDealloc:src/xfpm-pm-helper.c:117
+identicalInnerCondition:src/xfpm-dpms.c:166
+identicalInnerCondition:src/xfpm-idle.c:113
+duplicateConditionalAssign:src/xfpm-button.c:434
