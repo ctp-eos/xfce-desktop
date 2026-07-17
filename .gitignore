@@ -1,0 +1,6 @@
+builddir/
+.cache/
+*.log
+compile_commands.json
+meson-private/
+meson-logs/
