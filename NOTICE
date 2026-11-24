@@ -1,0 +1,15 @@
+NOTICE — CTP-EOS XFCE Desktop (downstream model)
+
+This repository is a downstream of upstream XFCE.
+
+- upstream/ holds the XFCE source baseline. Upstream XFCE components
+  remain under their own respective licenses; no root license file is
+  claimed for them here.
+- branding/ holds CTP-EOS identity and visual design.
+- config/ holds CTP-EOS default user experience settings.
+- patches/ holds intentional CTP-EOS source-level modifications.
+- docs/ holds project architecture and contributor documentation.
+
+CTP-EOS additions are maintained according to their project licensing
+terms. Upstream sources are kept separate from CTP-EOS customizations
+so upstream compatibility is preserved.
